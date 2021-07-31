@@ -54,8 +54,20 @@ function playRound(choiceC,choiceP) {
         console.log("The game was a tie.")
     } else console.log("Something went wrong.")
 }
-playRound() //plays one round of rock paper scissors
-function game() {
+//playRound() //plays one round of rock paper scissors
+function game() { //plays 5 rounds and keeps track of playerWins and computerWins
     playRound()
+    playRound()
+    playRound()
+    playRound()
+    playRound()
+    if (playerWins > computerWins) {
+        console.log("You win!!!")
+    } else if (playerWins < computerWins) {
+        console.log("You lost the game")
+    } else if (playerWins == computerWins) {
+        console.log("The game was a tie.")
+    }
 }
+game()
 console.log(`Total player wins: ${playerWins}. Total computer wins: ${computerWins}`)
