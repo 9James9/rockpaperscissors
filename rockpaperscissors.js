@@ -1,7 +1,7 @@
 // randomly select either "rock", "paper", or "scissors"
 //random number generator for 1-3, assigning each number value to a different computer choice
 function random(num) {
-    return Math.floor(Math.random()*num)
+    return Math.floor(Math.random() * num)
 }
 // create a scoring system
 let computerWins = 0
@@ -18,20 +18,21 @@ function computerChoice() {
     }
     //allow player to choose and convert it to lowercase
 }
-function playerChoice () {
+
+function playerChoice() {
     let choiceP = prompt("Choose Rock Paper or Scissors")
     choiceP.toLowerCase()
     if (choiceP == "rock" || choiceP == "paper" || choiceP == "scissors") {
         return choiceP
-    } else return(console.log("Please choose either rock paper or scissors"))
-    
+    } else return (console.log("Please choose either rock paper or scissors"))
+
 }
 //compare player selection to computer selection and log the result
-function playRound(choiceC,choiceP) {
+function playRound(choiceC, choiceP) {
     choiceP = playerChoice()
     choiceC = computerChoice()
     console.log(`The computer chose: ${choiceC} and you chose: ${choiceP}`)
-    
+
     if (choiceC == "rock" && choiceP == "paper") {
         console.log("You win. Paper beats Rock")
         return playerWins++
