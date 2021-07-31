@@ -3,6 +3,10 @@
 function random(num) {
     return Math.floor(Math.random()*num)
 }
+// create a scoring system
+let computerWins = 0
+let playerWins = 0
+//scoring
 function computerChoice() {
     let choiceC = random(3)
     if (choiceC == 0) {
@@ -27,22 +31,31 @@ function playRound(choiceC,choiceP) {
     choiceP = playerChoice()
     choiceC = computerChoice()
     console.log(`The computer chose: ${choiceC} and you chose: ${choiceP}`)
+    
     if (choiceC == "rock" && choiceP == "paper") {
         console.log("You win. Paper beats Rock")
+        return playerWins++
     } else if (choiceC == "rock" && choiceP == "scissors") {
         console.log("You lose. Rock beats Scissors")
+        return computerWins++
     } else if (choiceC == "paper" && choiceP == "rock") {
         console.log("You lose. Paper beats Rock")
+        return computerWins++
     } else if (choiceC == "paper" && choiceP == "scissors") {
         console.log("You win. Scissors beat Paper")
+        return playerWins++
     } else if (choiceC == "scissors" && choiceP == "paper") {
         console.log("You lose. Scissors beat paper")
+        return computerWins++
     } else if (choiceC == "scissors" && choiceP == "rock") {
         console.log("You win. Rock beats Scissors")
+        return playerWins++
     } else if (choiceC == choiceP) {
         console.log("The game was a tie.")
     } else console.log("Something went wrong.")
-    
 }
-playRound()
-
+playRound() //plays one round of rock paper scissors
+function game() {
+    playRound()
+}
+console.log(`Total player wins: ${playerWins}. Total computer wins: ${computerWins}`)
