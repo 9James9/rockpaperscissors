@@ -24,9 +24,9 @@ function playerChoice () {
 }
 //compare player selection to computer selection and log the result
 function playRound(choiceC,choiceP) {
-    choiceC = playerChoice()
-    choiceP = computerChoice()
-    
+    choiceP = playerChoice()
+    choiceC = computerChoice()
+    console.log(`The computer chose: ${choiceC} and you chose: ${choiceP}`)
     if (choiceC == "rock" && choiceP == "paper") {
         console.log("You win. Paper beats Rock")
     } else if (choiceC == "rock" && choiceP == "scissors") {
@@ -42,6 +42,7 @@ function playRound(choiceC,choiceP) {
     } else if (choiceC == choiceP) {
         console.log("The game was a tie.")
     } else console.log("Something went wrong.")
+    
 }
 playRound()
 
