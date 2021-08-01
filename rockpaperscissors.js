@@ -56,11 +56,8 @@ function playRound(choiceC, choiceP) {
     } else console.log("Something went wrong.")
 }
 //playRound() //plays one round of rock paper scissors
-function game() { //plays 5 rounds and keeps track of playerWins and computerWins
-    playRound()
-    playRound()
-    playRound()
-    playRound()
+function game() { 
+    for (let i = 0; i<5; i++)
     playRound()
     if (playerWins > computerWins) {
         console.log("You win!!!")
