@@ -1,5 +1,6 @@
 // randomly select either "rock", "paper", or "scissors"
 //random number generator for 1-3, assigning each number value to a different computer choice
+//this is a new branch where I will rework my code to add a UI
 function random(num) {
     return Math.floor(Math.random() * num)
 }
