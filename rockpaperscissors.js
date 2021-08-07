@@ -62,12 +62,12 @@ button3.addEventListener('click',playerChoseScissors)
 
 
 
-
 let playerWins = 0
 let computerWins = 0
 let theScore = document.createElement('h1')
 container.appendChild(theScore)
 theScore.innerHTML = `Total player wins: ${playerWins} <br> Total computer wins: ${computerWins}`
+
 
 //compare player selection to computer selection and log the result
 function playRound(choiceC, choiceP) {
@@ -98,11 +98,26 @@ console.log(`The computer chose: ${choiceC} and you chose: ${choiceP}`)
        ++playerWins
    } else results.textContent = 'The game was a tie'
    theScore.innerHTML = `Total player wins: ${playerWins} <br> Total computer wins: ${computerWins}`
-//announces a winner
+//announces a winner and resets scores to 0 when you press ok
    if (playerWins == 5) {
+    
     alert('You are the winner!')
+    let tryAgain = confirm('Click ok to play again')
+    if (tryAgain == true) {
+    playerWins = 0
+    computerWins = 0
+    theScore.innerHTML = `Total player wins: ${playerWins} <br> Total computer wins: ${computerWins}`
+    }
 } else if (computerWins == 5) {
+    
     alert('The computer wins today..')
+    let tryAgain = confirm('Click ok to play again')
+    if (tryAgain == true) {
+    computerWins = 0
+    playerWins = 0
+    theScore.innerHTML = `Total player wins: ${playerWins} <br> Total computer wins: ${computerWins}`
+    }
 }
 }
+
 
