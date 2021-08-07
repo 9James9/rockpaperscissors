@@ -1,0 +1,28 @@
+#topBar {
+    color: blue;
+    text-align: center;
+}
+.rock {
+    color: red;
+    padding: 10px 20px;
+    background-color: aqua;
+}
+.paper {
+    color: white;
+    padding: 10px 20px;
+    background-color: olive;
+}
+.scissors {
+    color: orange;
+    padding: 10px 20px;
+}
+#container {
+    text-align: center;
+}
+.content {
+    background-color: black;
+}
+.reset {
+    padding: 10px 20px;
+    right: 0px
+}

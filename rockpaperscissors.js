@@ -19,7 +19,7 @@ function computerChoice() {
 const container = document.querySelector('#container');
 const content = document.createElement('div');
 content.classList.add('content')
-content.textContent = 'This is the container for three choices'
+content.textContent = ''
 container.appendChild(content)
 
 const button1 = document.createElement('button')
@@ -117,5 +117,6 @@ const resetBtn = document.createElement('button')
 resetBtn.textContent = "Reset Game"
 content.appendChild(resetBtn)
 resetBtn.addEventListener('click',() => location.reload())
+resetBtn.classList.add('reset')
 
 
