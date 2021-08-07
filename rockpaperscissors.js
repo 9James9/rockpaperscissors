@@ -1,12 +1,8 @@
-// randomly select either "rock", "paper", or "scissors"
-//random number generator for 1-3, assigning each number value to a different computer choice
-//this is a new branch where I will rework my code to add a UI
 function random(num) {
     return Math.floor(Math.random() * num)
 }
-// create a scoring system
-let computerWins = 0
-let playerWins = 0
+
+
 //scoring
 function computerChoice() {
     let choiceC = random(3)
@@ -19,18 +15,7 @@ function computerChoice() {
     }
     //allow player to choose and convert it to lowercase
 }
-/*
-  function playerChoice() {
-    let choiceP = prompt("Choose Rock Paper or Scissors")
-    choiceP.toLowerCase()
-    if (choiceP == "rock" || choiceP == "paper" || choiceP == "scissors") {
-        return choiceP
-    } else return (console.log("Please choose either rock paper or scissors"))
-}
-*/
 
-//new player choice interface
-//created buttons with dom
 const container = document.querySelector('#container');
 const content = document.createElement('div');
 content.classList.add('content')
@@ -62,53 +47,55 @@ const playerChosePaper = function() {
 const playerChoseScissors = function() {
     playRound(computerChoice(),'scissors')    
 }
+
+//add div that displays results
+
+
+/*if (choiceC == 'rock' && choiceP == 'paper') {
+    results.textContent = 'You win. Paper beats Rock!'
+}
+*/
 //adding event listener on button click
 button1.addEventListener('click',playerChoseRock)
 button2.addEventListener('click',playerChosePaper)
 button3.addEventListener('click',playerChoseScissors)
+
+
+
+
+let playerWins = 0
+let computerWins = 0
+let theScore = document.createElement('h1')
+container.appendChild(theScore)
+theScore.innerHTML = `Total player wins: ${playerWins} <br> Total computer wins: ${computerWins}`
+
 //compare player selection to computer selection and log the result
 function playRound(choiceC, choiceP) {
     choiceP
-  
+    
+    const results = document.createElement('div')
+results.textContent = `The computer chose: ${choiceC} and you chose: ${choiceP}`
+container.appendChild(results)
+console.log(`The computer chose: ${choiceC} and you chose: ${choiceP}`)
 
-   // choiceC = computerChoice()
-    console.log(`The computer chose: ${choiceC} and you chose: ${choiceP}`)
-
-    if (choiceC == "rock" && choiceP == "paper") {
-        console.log("You win. Paper beats Rock")
-        return playerWins++
-    } else if (choiceC == "rock" && choiceP == "scissors") {
-        console.log("You lose. Rock beats Scissors")
-        return computerWins++
-    } else if (choiceC == "paper" && choiceP == "rock") {
-        console.log("You lose. Paper beats Rock")
-        return computerWins++
-    } else if (choiceC == "paper" && choiceP == "scissors") {
-        console.log("You win. Scissors beat Paper")
-        return playerWins++
-    } else if (choiceC == "scissors" && choiceP == "paper") {
-        console.log("You lose. Scissors beat paper")
-        return computerWins++
-    } else if (choiceC == "scissors" && choiceP == "rock") {
-        console.log("You win. Rock beats Scissors")
-        return playerWins++
-    } else if (choiceC == choiceP) {
-        console.log("The game was a tie.")
-    } else console.log("Something went wrong.")
+   if (choiceC == 'rock' && choiceP == 'paper') {
+       results.textContent = `The computer chose: ${choiceC} and you chose: ${choiceP}. You win. Paper beats Rock!`
+       ++playerWins
+   } else if (choiceC == 'rock' && choiceP == 'scissors') {
+       results.textContent = `The computer chose: ${choiceC} and you chose: ${choiceP}. You lose. Rock beats Scissors.`
+       ++computerWins
+   } else if (choiceC == 'paper' && choiceP == 'rock') {
+       results.textContent = `The computer chose: ${choiceC} and you chose: ${choiceP}. You lose. Paper beats Rock`
+       ++computerWins
+   } else if (choiceC == 'paper' && choiceP == 'scissors') {
+       results.textContent = `The computer chose: ${choiceC} and you chose: ${choiceP}. You win. Scissors beats Paper!`
+       ++playerWins
+   } else if (choiceC == 'scissors' && choiceP == 'paper') {
+       results.textContent = `The computer chose: ${choiceC} and you chose: ${choiceP}. You lose. Scissors beats Paper!`
+       ++computerWins
+   } else if (choiceC == 'scissors' && choiceP == 'rock') {
+       results.textContent = `The computer chose: ${choiceC} and you chose: ${choiceP}. You Win. Rock beats Scissors!`
+       ++playerWins
+   } else results.textContent = 'The game was a tie'
+   theScore.innerHTML = `Total player wins: ${playerWins} <br> Total computer wins: ${computerWins}`
 }
-//playRound() //plays one round of rock paper scissors
-function game() { 
-    for (let i = 0; i<5; i++)
-    playRound()
-    if (playerWins > computerWins) {
-        console.log("You win!!!")
-    } else if (playerWins < computerWins) {
-        console.log("You lost the game")
-    } else if (playerWins == computerWins) {
-        console.log("The game was a tie.")
-    }
-}
-// game()
-console.log(`Total player wins: ${playerWins}. Total computer wins: ${computerWins}`)
-playRound()
-
