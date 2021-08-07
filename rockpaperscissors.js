@@ -67,6 +67,7 @@ let computerWins = 0
 let theScore = document.createElement('h1')
 container.appendChild(theScore)
 theScore.innerHTML = `Total player wins: ${playerWins} <br> Total computer wins: ${computerWins}`
+theScore.classList.add('score')
 
 
 //compare player selection to computer selection and log the result
@@ -75,7 +76,9 @@ function playRound(choiceC, choiceP) {
     
     const results = document.createElement('div')
 results.textContent = `The computer chose: ${choiceC} and you chose: ${choiceP}`
+results.classList.add('results')
 container.appendChild(results)
+
 console.log(`The computer chose: ${choiceC} and you chose: ${choiceP}`)
 
    if (choiceC == 'rock' && choiceP == 'paper') {

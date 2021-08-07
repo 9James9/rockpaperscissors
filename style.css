@@ -18,11 +18,25 @@
 }
 #container {
     text-align: center;
+    height: 500px
 }
 .content {
     background-color: black;
 }
 .reset {
     padding: 10px 20px;
-    right: 0px
+}
+
+#container .score {
+    color: violet;
+    border: 5px black solid;
+}
+#container .results {
+    color: red; 
+}
+
+#body {
+    background-image: linear-gradient(to bottom left,lightgreen,rgb(0, 150, 255));
+    background-size: cover;
+    margin-bottom: 315px;
 }
