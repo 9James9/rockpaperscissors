@@ -114,7 +114,7 @@ console.log(`The computer chose: ${choiceC} and you chose: ${choiceP}`)
     if (tryAgain == true) {
     location.reload() 
     }
-}
+} 
 }
 const resetBtn = document.createElement('button')
 resetBtn.textContent = "Reset Game"
