@@ -98,4 +98,11 @@ console.log(`The computer chose: ${choiceC} and you chose: ${choiceP}`)
        ++playerWins
    } else results.textContent = 'The game was a tie'
    theScore.innerHTML = `Total player wins: ${playerWins} <br> Total computer wins: ${computerWins}`
+//announces a winner
+   if (playerWins == 5) {
+    alert('You are the winner!')
+} else if (computerWins == 5) {
+    alert('The computer wins today..')
 }
+}
+
