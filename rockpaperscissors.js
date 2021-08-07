@@ -99,25 +99,23 @@ console.log(`The computer chose: ${choiceC} and you chose: ${choiceP}`)
    } else results.textContent = 'The game was a tie'
    theScore.innerHTML = `Total player wins: ${playerWins} <br> Total computer wins: ${computerWins}`
 //announces a winner and resets scores to 0 when you press ok
-   if (playerWins == 5) {
+   if (playerWins == 5 && playerWins > computerWins) {
     
-    alert('You are the winner!')
-    let tryAgain = confirm('Click ok to play again')
+    let tryAgain = confirm('You are the winner! Click OK to play again.')
     if (tryAgain == true) {
-    playerWins = 0
-    computerWins = 0
-    theScore.innerHTML = `Total player wins: ${playerWins} <br> Total computer wins: ${computerWins}`
-    }
-} else if (computerWins == 5) {
+    location.reload()
+    } 
+} else if (computerWins == 5 && playerWins < computerWins) {
     
-    alert('The computer wins today..')
-    let tryAgain = confirm('Click ok to play again')
+    let tryAgain = confirm('The computer wins. Click OK to play again.')
     if (tryAgain == true) {
-    computerWins = 0
-    playerWins = 0
-    theScore.innerHTML = `Total player wins: ${playerWins} <br> Total computer wins: ${computerWins}`
+    location.reload() 
     }
 }
 }
+const resetBtn = document.createElement('button')
+resetBtn.textContent = "Reset Game"
+content.appendChild(resetBtn)
+resetBtn.addEventListener('click',() => location.reload())
 
 
